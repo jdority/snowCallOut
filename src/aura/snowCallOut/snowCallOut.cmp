@@ -1,0 +1,28 @@
+<aura:component controller="httpCallOutCtrl" implements="force:appHostable,flexipage:availableForAllPageTypes,force:lightningQuickAction" access="global">
+    <aura:attribute name="response" type="Map"/>
+    <aura:attribute name="ListOfArticles" type="String[]"/>
+
+    
+    <div class="slds-m-around--medium">
+        <!--Header part-->
+        <div class="slds-page-header" role="banner">
+            <div class="slds-media__body">
+                <p class="slds-page-header__title slds-truncate" title="Service Now Article List">Results from HTTP Callout to Service Now (Slow but sure ... click and wait please) </p>
+                <lightning:button variant="brand" label="Make CallOut" onclick="{! c.calloutCtrl }" />             
+            </div>
+        </div>
+        <!--Header part close-->
+        
+       <!--itearticle the list of Articles-->    
+        <ul class="slds-list--dotted">
+            <aura:iteration items="{!v.ListOfArticles}" var="articleLst">
+                
+                <li>{!articleLst.number}</li>
+                <li>{!articleLst.sys_id}</li>
+                <li>{!articleLst.sys_updated_on}</li>
+                <li>{!articleLst.text}</li>
+                <p>{!'KnowledgeURL https://tmnahrpov.service-now.com/kb_knowledge.do?sys_id=' + articleLst.sys_id}</p>
+            </aura:iteration>
+        </ul>
+    </div>
+</aura:component>
