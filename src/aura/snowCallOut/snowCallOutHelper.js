@@ -5,7 +5,7 @@
         // set the url parameter for getCalloutResponseContents method (to use as endPoint) 
         action.setParams({
             //"url": 'http://api.fixer.io/latest?base=' + base
-            "url": 'https://tmnahrpov.service-now.com/api/now/table/kb_knowledge?sysparam_limit=10&sys_param_query=GOTO123TEXTQUERY321='+base
+            "url": 'https://yourinstance.service-now.com/api/now/table/kb_knowledge?sysparam_limit=10&sys_param_query=GOTO123TEXTQUERY321='+base
         });
         action.setCallback(this, function(response) {
             var state = response.getState();
