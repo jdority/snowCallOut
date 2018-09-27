@@ -4,8 +4,8 @@ public class httpCallOutCtrl {
 	@AuraEnabled
 	public static Map < String,
 	Object > getCalloutResponseContents(String url) {
-    String userName = 'sfdc_api';
-    String password = '12345a2018!';
+    String userName = 'sfi';
+    String password = '18!';
     Blob headerValue = Blob.valueOf( username + ':' + password);
     String authorizationHeader = 'BASIC ' + EncodingUtil.base64Encode(headerValue);
         // Instantiate a new http object
